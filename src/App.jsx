@@ -8,7 +8,10 @@ import "font-awesome/css/font-awesome.min.css";
 function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
-  const [earned, setEarned] = useState({ amount: "No Badge", icon: "" });
+  const [earned, setEarned] = useState({
+    amount: "Beginner, but keep going!",
+    icon: "",
+  });
   const [data, setData] = useState([]);
   const [difficulty, setDifficulty] = useState(null);
   const [stopTimer, setStopTimer] = useState(false);
@@ -101,7 +104,7 @@ function App() {
             {stop ? (
               <div className="endContainer">
                 <h1 className="endText">
-                  Your Badge is:{" "}
+                  You are a :{" "}
                   <span className="earnedBadge">
                     <i className={`fa ${earned.icon} earnedIcon`}></i>{" "}
                     {earned.amount}
