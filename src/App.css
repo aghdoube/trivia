@@ -12,12 +12,12 @@
 .main {
   width: 75%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #202030),
-    url("./assets/pic1.jpg") center;
+    url("./assets/pic2.png") center;
   display: flex;
   flex-direction: column;
 }
 .top {
-  height: 50%;
+  height: 30%;
   position: relative;
 }
 
@@ -31,7 +31,7 @@
   font-size: 30px;
   font-weight: 700;
   position: absolute;
-  top: 450px;
+  top: 250px;
   bottom: 10px;
   left: 90px;
   background: linear-gradient(135deg, #00bcd4, #8a2be2);
@@ -48,6 +48,8 @@
   right: -5px;
   bottom: -5px;
   background: linear-gradient(135deg, #00bcd4, #8a2be2);
+  border: 8px solid rgba(0, 188, 212, 0.7);
+
   border-radius: 50%;
   z-index: -1;
   animation: pulsate 1s ease-in-out infinite;
@@ -73,6 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #00bcd4, #8a2be2);
 }
 
 .moneyList {
@@ -196,7 +199,7 @@
   align-items: center;
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -315,7 +318,7 @@
 }
 .difficultyButton.active {
   background-color: #0d6efd;
-  box-shadow: 0 0 10px 2px #0d6efd, 0 0 20px 4px #0d6efd;
+  box-shadow: 0 0 10px 8px #0d6efd, 0 0 20px 4px #0d6efd;
   color: white;
 }
 

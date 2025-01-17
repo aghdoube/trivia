@@ -5,7 +5,13 @@ import correct from "../assets/correct.wav";
 import wrong from "../assets/wrong.wav";
 import play from "../assets/play.wav";
 
-function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
+function Trivia({
+  data,
+  setStop,
+  questionNumber,
+  setQuestionNumber,
+  setStopTimer,
+}) {
   const [question, setQuestion] = useState(null);
 
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -15,14 +21,6 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [correctAnswer] = useSound(correct);
   const [wrongAnswer] = useSound(wrong);
 
-  //useEffect(() => {
-  // letsPlay();
-  //}, [letsPlay]);
-
-  useEffect(() => {
-    setQuestion(data[questionNumber - 1]);
-  }, [data, questionNumber]);
-
   const delay = (duration, callback) => {
     setTimeout(() => {
       callback();
@@ -30,6 +28,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   };
 
   const handleClick = (a) => {
+    setStopTimer(true);
     setSelectedAnswer(a);
     setClassName("answer active");
 
@@ -51,6 +50,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
         delay(1000, () => {
           setQuestionNumber((prev) => prev + 1);
           setSelectedAnswer(null);
+          setStopTimer(false);
         });
       } else {
         wrongAnswer();
@@ -61,6 +61,13 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
     });
   };
 
+  useEffect(() => {
+    letsPlay();
+  }, [letsPlay]);
+
+  useEffect(() => {
+    setQuestion(data[questionNumber - 1]);
+  }, [data, questionNumber]);
   return (
     <div className="trivia">
       <div className="question">{question?.question} </div>

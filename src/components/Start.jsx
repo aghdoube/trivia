@@ -67,7 +67,7 @@ export default function Start({ setDifficulty }) {
             }`}
             onClick={() => setSelectedDifficulty("easy")}
           >
-            🛡 Easy
+            🏅 Easy
           </button>
           <button
             className={`difficultyButton ${
@@ -75,7 +75,7 @@ export default function Start({ setDifficulty }) {
             }`}
             onClick={() => setSelectedDifficulty("medium")}
           >
-            ⚖ Medium
+            🏆 Medium
           </button>
           <button
             className={`difficultyButton ${
@@ -83,7 +83,7 @@ export default function Start({ setDifficulty }) {
             }`}
             onClick={() => setSelectedDifficulty("hard")}
           >
-            ⚡ Hard
+            👑 Hard
           </button>
         </div>
         <button
